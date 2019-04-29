@@ -1,14 +1,6 @@
 package sample;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Database {
 
@@ -31,4 +23,23 @@ public class Database {
 
         return connection;
     }
+
+    boolean login (String username, String password) throws SQLException {
+        String usernameDB = null;
+        String query = "SELECT username FROM User WHERE username = (?) AND password = (?)";
+        PreparedStatement pst = getCurrentConnection().prepareStatement(query);
+        pst.setString(1, username);
+        pst.setString(2, password);
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            usernameDB = rs.getString(username);
+        }
+
+        assert usernameDB != null;
+        return usernameDB.equals(username);
+
+
+    }
+
 }
