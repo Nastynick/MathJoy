@@ -5,7 +5,7 @@ import java.sql.*;
 public class Database {
 
     private static Connection connection = null;
-    private static String url = "den1.mysql2.gear.host";
+    private static String url = "jdbc:mysql://den1.mysql2.gear.host/mathjoy";
     private static String user = "mathjoy";
     private static String pass = "Glass1!";
 
@@ -25,6 +25,11 @@ public class Database {
     }
 
     boolean login (String username, String password) throws SQLException {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         String usernameDB = null;
         String query = "SELECT username FROM User WHERE username = (?) AND password = (?)";
         PreparedStatement pst = getCurrentConnection().prepareStatement(query);
@@ -33,7 +38,7 @@ public class Database {
         ResultSet rs = pst.executeQuery();
 
         while (rs.next()) {
-            usernameDB = rs.getString(username);
+            usernameDB = rs.getString("username");
         }
 
         assert usernameDB != null;
