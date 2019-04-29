@@ -29,7 +29,7 @@ public class LoginController implements Initializable {
     void loginButtonPressed(ActionEvent event) {
 
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("loginView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
             Parent root = null;
             try {
                 root = loader.load();
