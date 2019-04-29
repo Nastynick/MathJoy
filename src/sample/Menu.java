@@ -18,34 +18,23 @@ public class Menu implements Initializable {
     @FXML
     void CalculatorButton(ActionEvent event) {
 
-    }
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1.fxml"));
+            Parent root = null;
+            try {
+                root = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+
+
+        }
+
 
     @FXML
     void exersicesButton(ActionEvent event) {
-
-    }
-
-    @FXML
-    void exitButton(ActionEvent event) {
-        System.exit(0);
-
-    }
-
-    @FXML
-    void placeholder1Button(ActionEvent event) {
-
-    }
-
-    @FXML
-    void placeholder2Button(ActionEvent event) {
-
-    }
-
-    @FXML
-    void loginButtonPressed(ActionEvent event) {
-
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("loginView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1.fxml"));
         Parent root = null;
         try {
             root = loader.load();
@@ -57,6 +46,47 @@ public class Menu implements Initializable {
 
 
     }
+
+
+    @FXML
+    void exitButton(ActionEvent event) {
+        System.exit(0);
+
+    }
+
+    @FXML
+
+    void placeholder1Button(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+
+
+    }
+
+
+    @FXML
+    void placeholder2Button(ActionEvent event) {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+
+
+        }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
