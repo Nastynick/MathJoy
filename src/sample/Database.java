@@ -13,9 +13,9 @@ import java.util.logging.Logger;
 public class Database {
 
     private static Connection connection = null;
-    private static String url = "";
-    private static String user = "";
-    private static String pass = "";
+    private static String url = "den1.mysql2.gear.host";
+    private static String user = "mathjoy";
+    private static String pass = "Glass1!";
 
     // Establish a new connection without needing to create new connections if it does already exist.
     private Connection getCurrentConnection() {
