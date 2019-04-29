@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -26,9 +27,21 @@ public class LoginController implements Initializable {
     private PasswordField password;
 
     @FXML
+    private Label errorLabel;
+
+    @FXML
     void loginButtonPressed(ActionEvent event) {
+        boolean loginAttempt = true;
 
+        if (username.getText().length() < 3) {
+            loginAttempt = false;
+        }
 
+        if (password.getText().length() < 3) {
+            loginAttempt = false;
+        }
+
+        if (loginAttempt) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
             Parent root = null;
             try {
@@ -38,6 +51,8 @@ public class LoginController implements Initializable {
             }
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
+        }
+            errorLabel.setText("Invalid username/password!");
 
 
     }
