@@ -23,12 +23,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="false" />
-    <loaded-nodes>
-      <connection connection-id="3dc518d9-341c-4063-b637-3841a61bb8aa">
-        <schema name="information_schema" object-types="function, procedure, view, table" />
-        <schema name="mathjoy" object-types="function, procedure, view, table" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="3dc518d9-341c-4063-b637-3841a61bb8aa">
