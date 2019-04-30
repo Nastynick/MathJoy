@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -41,18 +42,22 @@ public class LoginController implements Initializable {
             loginAttempt = false;
         }
 
-        if (loginAttempt) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
-            Parent root = null;
-            try {
-                root = loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
+        try {
+            if (database.login(username.getText(), password.getText()) && loginAttempt) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
+                Parent root = null;
+                try {
+                    root = loader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
             }
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-            errorLabel.setText("Invalid username/password!");
+        errorLabel.setText("Invalid username/password!");
 
 
     }

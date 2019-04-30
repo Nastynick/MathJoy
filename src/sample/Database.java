@@ -5,7 +5,7 @@ import java.sql.*;
 public class Database {
 
     private static Connection connection = null;
-    private static String url = "jdbc:mysql://den1.mysql2.gear.host/mathjoy";
+    private static String url = "jdbc:mysql://den1.mysql2.gear.host:3306/mathjoy";
     private static String user = "mathjoy";
     private static String pass = "Glass1!";
 
@@ -41,8 +41,13 @@ public class Database {
             usernameDB = rs.getString("username");
         }
 
-        assert usernameDB != null;
-        return usernameDB.equals(username);
+
+        if (usernameDB == null) {
+            return false;
+        } else {
+            return usernameDB.equals(username);
+        }
+
 
 
     }

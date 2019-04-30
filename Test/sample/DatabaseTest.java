@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class DatabaseTest {
-    Database database = new Database();
+    private Database database = new Database();
     @Test
     public void loginSuccess() throws Exception {
         boolean expected = true;
