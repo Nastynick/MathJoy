@@ -13,12 +13,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Menu implements Initializable {
+public class MenuController implements Initializable {
 
     @FXML
     void CalculatorButton(ActionEvent event) {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1View.fxml"));
             Parent root = null;
             try {
                 root = loader.load();
@@ -34,7 +34,7 @@ public class Menu implements Initializable {
 
     @FXML
     void exersicesButton(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ExSelectionView.fxml"));
         Parent root = null;
         try {
             root = loader.load();
@@ -57,7 +57,7 @@ public class Menu implements Initializable {
     @FXML
 
     void placeholder1Button(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1View.fxml"));
         Parent root = null;
         try {
             root = loader.load();
@@ -74,7 +74,7 @@ public class Menu implements Initializable {
     @FXML
     void placeholder2Button(ActionEvent event) {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1View.fxml"));
         Parent root = null;
         try {
             root = loader.load();

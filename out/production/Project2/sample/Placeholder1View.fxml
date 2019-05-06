@@ -5,7 +5,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Placeholder1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Placeholder1Controller">
    <children>
       <Button layoutX="274.0" layoutY="188.0" mnemonicParsing="false" onAction="#BackButtonPressed" text="BackButton" />
       <Text layoutX="278.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder1" />
