@@ -24,7 +24,7 @@ public class Database {
         return connection;
     }
 
-    boolean login (String username, String password) throws SQLException {
+    public boolean login (String username, String password) throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
