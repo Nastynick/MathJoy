@@ -93,6 +93,28 @@ public class Database {
 
     }
 
+    int getMathResults (String username) {
+        ArrayList<Exercise> exercises = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            String query = "SELECT * results WHERE user_username = (?);";
+            PreparedStatement pst = getCurrentConnection().prepareStatement(query);
+            pst.setString(1, username);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+               // Result result = new Result(rs.getInt("idResults"), rs.getInt())
+            }
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+
+        return -1;
+
+    }
+
 }
 
 
