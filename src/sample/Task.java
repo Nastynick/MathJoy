@@ -6,6 +6,7 @@ public class Task {
     private String questionText;
     private String answer;
     private boolean correctAnswer;
+    private String yourAnswer;
 
     public Task(int questionID, String questionText, String answer) {
         QuestionID = questionID;
@@ -43,5 +44,13 @@ public class Task {
 
     public void setCorrectAnswer(boolean correctAnswer) {
         this.correctAnswer = correctAnswer;
+    }
+
+    public String getYourAnswer() {
+        return yourAnswer;
+    }
+
+    public void setYourAnswer(String yourAnswer) {
+        this.yourAnswer = yourAnswer;
     }
 }
