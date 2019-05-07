@@ -75,7 +75,9 @@ public class Database {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            String query = "SELECT exercise.* JOIN user_has_exercise ON user_has_exercise.exercise_idExercise = exercise.idExercise WHERE user_has_exercise.user_username = (?);";
+            String query = "SELECT exercise.*\n" +
+                    "FROM exercise\n" +
+                    "JOIN user_has_exercise ON user_has_exercise.exercise_idExercise = exercise.idExercise WHERE user_has_exercise.user_username = (?);";
             PreparedStatement pst = getCurrentConnection().prepareStatement(query);
             pst.setString(1, username);
             ResultSet rs = pst.executeQuery();
