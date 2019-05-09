@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
    <children>
-      <Button layoutX="206.0" layoutY="149.0" mnemonicParsing="false" onAction="#exersicesButton" prefHeight="25.0" prefWidth="188.0" text="Exersices" />
-      <Button layoutX="206.0" layoutY="200.0" mnemonicParsing="false" onAction="#CalculatorButton" prefHeight="25.0" prefWidth="188.0" text="Calculator" />
-      <Button layoutX="206.0" layoutY="241.0" mnemonicParsing="false" onAction="#placeholder2Button" prefHeight="25.0" prefWidth="188.0" text="placeholder" />
-      <Button layoutX="206.0" layoutY="289.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="188.0" text="EXIT" textAlignment="CENTER" />
-      <Button layoutX="241.0" layoutY="56.0" mnemonicParsing="false" onAction="#placeholder1Button" prefHeight="25.0" prefWidth="116.0" text="placeholder" />
+      <Button layoutX="205.0" layoutY="188.0" mnemonicParsing="false" onAction="#exersicesButton" prefHeight="25.0" prefWidth="188.0" text="Exercise" />
+      <Button layoutX="205.0" layoutY="235.0" mnemonicParsing="false" onAction="#CalculatorButton" prefHeight="25.0" prefWidth="188.0" text="placeholder" />
+      <Button layoutX="205.0" layoutY="272.0" mnemonicParsing="false" onAction="#placeholder2Button" prefHeight="25.0" prefWidth="188.0" text="placeholder" />
+      <Button layoutX="206.0" layoutY="361.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="188.0" text="EXIT" textAlignment="CENTER" />
+      <Button layoutX="205.0" layoutY="311.0" mnemonicParsing="false" onAction="#placeholder1Button" prefHeight="25.0" prefWidth="188.0" text="placeholder" />
+      <ImageView fitHeight="163.0" fitWidth="290.0" layoutX="155.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mathjoylogo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

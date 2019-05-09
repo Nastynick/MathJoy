@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -35,7 +36,7 @@ public class TaskWindowController implements Initializable {
     private ListView<String> taskList;
 
     @FXML
-    private TextArea answerBox;
+    private TextField answerBox;
 
     @FXML
     private Text questionId;
@@ -64,6 +65,8 @@ public class TaskWindowController implements Initializable {
         task.setYourAnswer(answer);
         System.out.println(task.isCorrectAnswer()); // DEBUG PRINT
         tasks.set(i, task);
+        answerBox.setText("");
+        answerBox.requestFocus();
 
         if (doContinue) {
             i++; // increments the counter.
@@ -134,6 +137,8 @@ public class TaskWindowController implements Initializable {
                 nextButton.setText("Finish");
                 doContinue = false;
             }
+            answerBox.requestFocus();
+
         });
     }
 }

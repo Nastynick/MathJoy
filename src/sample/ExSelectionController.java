@@ -51,11 +51,11 @@ public class ExSelectionController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Database database = new Database();
 
-        ArrayList<Exercise> exercises = database.getExcercises("Bob");
+        ArrayList<Exercise> exercises = database.getExcercises("Marijana");
         tableView.getItems().addAll(exercises);
 
 
-        exerciseName.setCellValueFactory(new Callback<>() {
+        exerciseName.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Exercise, String>, ObservableValue<String>>() {
             public ObservableValue<String> call(TableColumn.CellDataFeatures<Exercise, String> p) {
                 return new ReadOnlyObjectWrapper(p.getValue().getName());
             }

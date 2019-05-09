@@ -60,13 +60,13 @@ public class ExerciseResultController implements Initializable {
 
             taskResults.getItems().addAll(tasks);
 
-        taskColumn.setCellValueFactory(new Callback<>() {
+        taskColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Task, Integer>, ObservableValue<Integer>>() {
             public ObservableValue<Integer> call(TableColumn.CellDataFeatures<Task, Integer> p) {
                 return new ReadOnlyObjectWrapper(p.getValue().getQuestionID());
             }
         });
 
-        resultColumn.setCellValueFactory(new Callback<>() {
+        resultColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Task, Boolean>, ObservableValue<Boolean>>() {
             public ObservableValue<Boolean> call(TableColumn.CellDataFeatures<Task, Boolean> p) {
                 return new ReadOnlyObjectWrapper(p.getValue().isCorrectAnswer());
             }
@@ -110,7 +110,7 @@ public class ExerciseResultController implements Initializable {
             }
         }
 
-        text.setText(""+correctAmount+" / "+ tasks.size());
+        text.setText("Great attempt!\nYou got:\n"+correctAmount+" / "+ tasks.size());
 
         });
 
