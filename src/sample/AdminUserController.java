@@ -7,9 +7,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -63,9 +65,15 @@ public class AdminUserController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         Platform.runLater(()->{
+            columnOne.setCellValueFactory(new PropertyValueFactory<>("username"));
+            columnTwo.setCellValueFactory(new PropertyValueFactory<>("isTeacher"));
 
-            ObservableList<User> userData;
-            userData = FXCollections.observableArrayList();
+            ObservableList<User> userData = null;
+            try {
+                userData = FXCollections.observableArrayList(database.getAllUsers());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             userTableView.setItems(userData);
 
             userTableView.setRowFactory((TableView<User> tv) -> {
@@ -76,7 +84,7 @@ public class AdminUserController implements Initializable {
                         userNameField.setText(rowData.getUsername());
                         passwordField.setText(rowData.getPassword());
 
-                        if (rowData.getIsTeacher().equals("True")) {
+                        if (rowData.getIsTeacher().equals("true")) {
                             isTeacherBox.setSelected(true);
                         } else {
                             isTeacherBox.setSelected(false);

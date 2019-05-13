@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuAdminController">
+   <children>
+      <Button fx:id="adminUserButton" layoutX="205.0" layoutY="188.0" mnemonicParsing="false" onAction="#adminUserButtonClicked" prefHeight="25.0" prefWidth="188.0" text="Admininistrate User" />
+      <Button fx:id="adminExerciseButton" layoutX="205.0" layoutY="220.0" mnemonicParsing="false" onAction="#adminExerciseButtonClicked" prefHeight="25.0" prefWidth="188.0" text="Administrate Exercises" />
+      <Button fx:id="adminTaskButton" layoutX="205.0" layoutY="251.0" mnemonicParsing="false" onAction="#adminTaskButtonClicked" prefHeight="25.0" prefWidth="188.0" text="Administrate Tasks" />
+      <Button fx:id="adminExitButton" layoutX="206.0" layoutY="361.0" mnemonicParsing="false" onAction="#adminExitClicked" prefHeight="25.0" prefWidth="188.0" text="EXIT" textAlignment="CENTER" />
+      <Button fx:id="adminViewUserButton" layoutX="205.0" layoutY="282.0" mnemonicParsing="false" onAction="#adminViewUserButtonClicked" prefHeight="25.0" prefWidth="188.0" text="View Users" />
+      <ImageView fitHeight="163.0" fitWidth="290.0" layoutX="155.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mathjoylogo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

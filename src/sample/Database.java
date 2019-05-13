@@ -156,6 +156,28 @@ public class Database {
     }
 
 
+    ArrayList<User> getAllUsers () throws SQLException {
+        ArrayList<User> users = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String query = "SELECT * FROM User";
+        PreparedStatement pst = getCurrentConnection().prepareStatement(query);
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            User user = new User(rs.getString("username"), rs.getString("password"), rs.getString("isTeacher"));
+            users.add(user);
+        }
+
+        return users;
+
+    }
+
+
 }
 
 

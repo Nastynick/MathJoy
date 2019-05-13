@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -29,6 +30,22 @@ public class LoginController implements Initializable {
 
     @FXML
     private Label errorLabel;
+
+    @FXML
+    private Button adminShortcutButton;
+
+    @FXML
+    void adminShortcutButtonPressed(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuAdminView.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+    }
 
     @FXML
     void loginButtonPressed(ActionEvent event) {
