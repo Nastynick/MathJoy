@@ -38,5 +38,6 @@
             <Font size="22.0" />
          </font>
       </Label>
+      <Button fx:id="adminShortcutButton" layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#adminShortcutButtonPressed" text="Admin Shortcut" />
    </children>
 </AnchorPane>
