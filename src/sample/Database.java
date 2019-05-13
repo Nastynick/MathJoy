@@ -12,6 +12,15 @@ public class Database {
     private static String url = "jdbc:mysql://den1.mysql2.gear.host:3306/mathjoy";
     private static String user = "mathjoy";
     private static String pass = "Glass1!";
+    private static String username;
+
+    public static String getUsername() {
+        return username;
+    }
+
+    public static void setUsername(String username) {
+        Database.username = username;
+    }
 
     // Establish a new connection without needing to create new connections if it does already exist.
     private Connection getCurrentConnection() {
