@@ -1,7 +1,10 @@
 package sample;
 
+import java.security.SecureRandom;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Database {
 
@@ -95,8 +98,8 @@ public class Database {
 
     }
 
-    int getMathResults (String username) {
-        ArrayList<Exercise> exercises = new ArrayList<>();
+    ArrayList<Result> getMathResults (String username) {
+        ArrayList<Result> results = new ArrayList<>();
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
@@ -106,16 +109,43 @@ public class Database {
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
-               // Result result = new Result(rs.getInt("idResults"), rs.getInt())
+               Result result = new Result(rs.getInt("idResults")
+                       ,rs.getInt("exercise_idExercise")
+                       ,username
+                       ,rs.getString("value")
+                       ,rs.getString("date"));
+               results.add(result);
             }
 
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
 
-        return -1;
+        return results;
 
     }
+
+    void insertMathResult (String username, int exerciseID, String value) throws SQLException {
+        String query = "String query = \" insert into results (idResults, date, value, exercise_idExercise, user_username)\"\n" +
+                " + \" values (?, ?, ?, ?, ?)\";";
+        PreparedStatement pst = getCurrentConnection().prepareStatement(query);
+
+        String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+
+        pst.setInt(1, getRandomNr());
+        pst.setString(2, date);
+        pst.setString(3, value);
+        pst.setInt(4, exerciseID);
+        pst.setString(5, username);
+
+        pst.execute();
+    }
+
+    private int getRandomNr() { // returns new ID
+        SecureRandom random = new SecureRandom();
+        return random.nextInt(2147483647);
+    }
+
 
 }
 

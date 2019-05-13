@@ -4,11 +4,16 @@ public class Result {
     private int resultID;
     private int exerciseID;
     private String username;
+    private String resultScore;
+    private String date;
 
-    public Result(int resultID, int exerciseID, String username) {
+
+    public Result(int resultID, int exerciseID, String username, String resultScore, String date) {
         this.resultID = resultID;
         this.exerciseID = exerciseID;
         this.username = username;
+        this.resultScore = resultScore;
+        this.date = date;
     }
 
     public int getResultID() {
@@ -35,5 +40,19 @@ public class Result {
         this.username = username;
     }
 
+    public String getResultScore() {
+        return resultScore;
+    }
 
+    public void setResultScore(String resultScore) {
+        this.resultScore = resultScore;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 }
