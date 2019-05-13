@@ -1,22 +1,30 @@
 package sample;
 
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 
-public class AdminUserController {
+import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
+
+public class AdminUserController implements Initializable {
+
+    Database database = new Database();
 
     @FXML
-    private TableView<?> userTableView;
+    private TableView<User> userTableView;
 
     @FXML
     private TableColumn<?, ?> columnOne;
 
     @FXML
-    private TableColumn<?, ?> column2;
+    private TableColumn<?, ?> columnTwo;
 
     @FXML
     private Button removeButton;
@@ -36,5 +44,54 @@ public class AdminUserController {
     @FXML
     private Button addButton;
 
-}
+    @FXML
+    void onUserAddButtonPressed(ActionEvent event) {
 
+    }
+
+    @FXML
+    void onUserEditButtonPressed(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onUserRemoveButtonPressed(ActionEvent event) {
+
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        Platform.runLater(()->{
+
+            ObservableList<User> userData;
+            userData = FXCollections.observableArrayList();
+            userTableView.setItems(userData);
+
+            userTableView.setRowFactory((TableView<User> tv) -> {
+                TableRow<User> row = new TableRow<>();
+                row.setOnMouseClicked((MouseEvent event) -> {
+                    if (event.getClickCount() == 1 && (!row.isEmpty())) {
+                        User rowData = row.getItem();
+                        userNameField.setText(rowData.getUsername());
+                        passwordField.setText(rowData.getPassword());
+
+                        if (rowData.getIsTeacher().equals("True")) {
+                            isTeacherBox.setSelected(true);
+                        } else {
+                            isTeacherBox.setSelected(false);
+                        }
+                    }
+                });
+                return row;
+            });
+
+
+
+
+        });
+
+
+
+    }
+}
