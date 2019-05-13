@@ -135,8 +135,8 @@ public class Database {
     }
 
     void insertMathResult (String username, int exerciseID, String value) throws SQLException {
-        String query = "String query = \" insert into results (idResults, date, value, exercise_idExercise, user_username)\"\n" +
-                " + \" values (?, ?, ?, ?, ?)\";";
+        String query = "insert into results (idResults, date, value, exercise_idExercise, user_username)\n" +
+                " values (?, ?, ?, ?, ?);";
         PreparedStatement pst = getCurrentConnection().prepareStatement(query);
 
         String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
