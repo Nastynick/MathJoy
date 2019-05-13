@@ -72,9 +72,9 @@ public class MenuController implements Initializable {
 
 
     @FXML
-    void placeholder2Button(ActionEvent event) {
+    void resultsButton(ActionEvent event) {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1View.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ResultView.fxml"));
         Parent root = null;
         try {
             root = loader.load();
