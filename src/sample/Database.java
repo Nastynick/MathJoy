@@ -28,7 +28,7 @@ public class Database {
             return connection;
         } else {
             try {
-                connection = DriverManager.getConnection(url,user,pass);
+                connection = DriverManager.getConnection(url, user, pass);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -37,7 +37,7 @@ public class Database {
         return connection;
     }
 
-    public boolean login (String username, String password) throws SQLException {
+    public boolean login(String username, String password) throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -64,15 +64,15 @@ public class Database {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-        String query = "SELECT * FROM tasks WHERE Exercise_idExercise = (?)";
-        PreparedStatement pst = getCurrentConnection().prepareStatement(query);
-        pst.setInt(1, exerciseID);
-        ResultSet rs = pst.executeQuery();
+            String query = "SELECT * FROM tasks WHERE Exercise_idExercise = (?)";
+            PreparedStatement pst = getCurrentConnection().prepareStatement(query);
+            pst.setInt(1, exerciseID);
+            ResultSet rs = pst.executeQuery();
 
-        while (rs.next()) {
-           Task task = new Task(rs.getInt("idTasks"), rs.getString("question"), rs.getString("answer"));
-           tasks.add(task);
-        }
+            while (rs.next()) {
+                Task task = new Task(rs.getInt("idTasks"), rs.getString("question"), rs.getString("answer"));
+                tasks.add(task);
+            }
 
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -107,7 +107,7 @@ public class Database {
 
     }
 
-    ArrayList<Result> getMathResults (String username) {
+    ArrayList<Result> getMathResults(String username) {
         ArrayList<Result> results = new ArrayList<>();
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -118,12 +118,12 @@ public class Database {
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
-               Result result = new Result(rs.getInt("idResults")
-                       ,rs.getInt("exercise_idExercise")
-                       ,username
-                       ,rs.getString("value")
-                       ,rs.getString("date"));
-               results.add(result);
+                Result result = new Result(rs.getInt("idResults")
+                        , rs.getInt("exercise_idExercise")
+                        , username
+                        , rs.getString("value")
+                        , rs.getString("date"));
+                results.add(result);
             }
 
         } catch (ClassNotFoundException | SQLException e) {
@@ -134,7 +134,7 @@ public class Database {
 
     }
 
-    void insertMathResult (String username, int exerciseID, String value) throws SQLException {
+    void insertMathResult(String username, int exerciseID, String value) throws SQLException {
         String query = "insert into results (idResults, date, value, exercise_idExercise, user_username)\n" +
                 " values (?, ?, ?, ?, ?);";
         PreparedStatement pst = getCurrentConnection().prepareStatement(query);
@@ -156,7 +156,7 @@ public class Database {
     }
 
 
-    ArrayList<User> getAllUsers () throws SQLException {
+    ArrayList<User> getAllUsers() throws SQLException {
         ArrayList<User> users = new ArrayList<>();
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -177,7 +177,65 @@ public class Database {
 
     }
 
+    boolean insertUser(User user) throws SQLException {
 
+
+        if (checkUsername(user)) {
+
+            String query = "insert into user (username, password, isTeacher)\n" +
+                    " values (?, ?, ?);";
+            PreparedStatement pst = getCurrentConnection().prepareStatement(query);
+            pst.setString(1, user.getUsername());
+            pst.setString(2, user.getPassword());
+            pst.setString(3, "false");
+            pst.execute();
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
+    private boolean checkUsername(User user) throws SQLException {
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String usernameDB = null;
+        String query = "SELECT username FROM user WHERE username = (?)";
+        PreparedStatement pst;
+        pst = getCurrentConnection().prepareStatement(query);
+        pst.setString(1, user.getUsername());
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            usernameDB = rs.getString("username");
+        }
+
+
+        return usernameDB == null;
+
+    }
+
+    boolean removeUser (User user) {
+        try {
+            if (!checkUsername(user)) {
+                String query = "DELETE from user WHERE username = (?)";
+                PreparedStatement pst = getCurrentConnection().prepareStatement(query);
+                pst.setString(1, user.getUsername());
+                pst.execute();
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
 
 
