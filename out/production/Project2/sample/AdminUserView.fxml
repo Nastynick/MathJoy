@@ -10,12 +10,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.29264214046822745" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="sample.AdminUserController">
+<SplitPane dividerPositions="0.29264214046822745" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminUserController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
             <TableView fx:id="userTableView" layoutY="-2.0" prefHeight="400.0" prefWidth="178.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
-              <columns>
+                <placeholder>
+                    <Label text="List loading, please wait..."/>
+                </placeholder>
+                <columns>
                 <TableColumn fx:id="columnOne" prefWidth="88.0" text="C1" />
                 <TableColumn fx:id="columnTwo" prefWidth="86.0" text="C2" />
               </columns>
@@ -28,7 +31,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button fx:id="removeButton" layoutX="304.0" layoutY="341.0" mnemonicParsing="false" onAction="#onUserRemoveButtonPressed" prefHeight="43.0" prefWidth="89.0" text="Remove">
+            <Button fx:id="removeButton" layoutX="317.0" layoutY="341.0" mnemonicParsing="false" onAction="#onUserRemoveButtonPressed" prefHeight="43.0" prefWidth="89.0" text="Remove">
                <font>
                   <Font size="16.0" />
                </font>
@@ -45,16 +48,26 @@
                   <Font size="14.0" />
                </font>
             </CheckBox>
-            <Button fx:id="editButton" layoutX="163.0" layoutY="341.0" mnemonicParsing="false" onAction="#onUserEditButtonPressed" prefHeight="43.0" prefWidth="89.0" text="Edit">
+            <Button fx:id="editButton" layoutX="218.0" layoutY="341.0" mnemonicParsing="false" onAction="#onUserEditButtonPressed" prefHeight="43.0" prefWidth="89.0" text="Edit">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="addButton" layoutX="27.0" layoutY="341.0" mnemonicParsing="false" onAction="#onUserAddButtonPressed" prefHeight="43.0" prefWidth="89.0" text="Add">
+            <Button fx:id="addButton" layoutX="121.0" layoutY="341.0" mnemonicParsing="false" onAction="#onUserAddButtonPressed" prefHeight="43.0" prefWidth="89.0" text="Add">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
+            <Button fx:id="onBackButtonPressed" layoutX="14.0" layoutY="341.0" mnemonicParsing="false" onAction="#onBackButtonPressed" prefHeight="43.0" prefWidth="89.0" text="Back">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Label fx:id="feedbackLabel" alignment="CENTER" layoutX="27.0" layoutY="191.0" prefHeight="17.0" prefWidth="366.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
   </items>
 </SplitPane>
