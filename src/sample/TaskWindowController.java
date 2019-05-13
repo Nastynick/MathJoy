@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -85,6 +86,11 @@ public class TaskWindowController implements Initializable {
                 Parent root = loader.load();
                 ExerciseResultController ex = loader.getController();
                 ex.setTasks(tasks);
+
+                insertAllTaskResultsIntoDatabase();
+
+
+
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
             } catch (Exception e){
@@ -119,6 +125,41 @@ public class TaskWindowController implements Initializable {
         taskList.setItems(taskNames);
 
 
+    }
+
+    public void insertAllTaskResultsIntoDatabase(){
+
+        int correctAmount = 0;
+
+        for (Task task : tasks){
+            if (task.isCorrectAnswer()){
+                correctAmount++;
+            }
+        }
+
+        String correctAmountString = String.valueOf(correctAmount)+"/"+String.valueOf(tasks.size());
+
+        try {
+            database.insertMathResult(Database.getUsername(), id, correctAmountString);
+            System.out.println("Username: "+Database.getUsername() +" ExcerciseId: "+ id+" Result: "+ correctAmountString);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+       /* for (Task t : tasks) {
+            try {
+                //database.insertMathResult(Database.getUsername(), id, t.getYourAnswer());
+                System.out.println("Username: "+Database.getUsername() +" ExcerciseId: "+ id+" Result"+ t.getYourAnswer());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        */
     }
 
 
