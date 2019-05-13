@@ -112,7 +112,7 @@ public class Database {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            String query = "SELECT * results WHERE user_username = (?);";
+            String query = "SELECT * from results WHERE user_username = (?);";
             PreparedStatement pst = getCurrentConnection().prepareStatement(query);
             pst.setString(1, username);
             ResultSet rs = pst.executeQuery();
