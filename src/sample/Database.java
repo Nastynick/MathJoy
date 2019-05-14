@@ -112,7 +112,9 @@ public class Database {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            String query = "SELECT * from results WHERE user_username = (?);";
+            String query = "        SELECT *\n" +
+                    "        FROM results\n" +
+                    "        JOIN exercise ON results.exercise_idExercise = exercise.idExercise;";
             PreparedStatement pst = getCurrentConnection().prepareStatement(query);
             pst.setString(1, username);
             ResultSet rs = pst.executeQuery();
@@ -122,7 +124,9 @@ public class Database {
                         , rs.getInt("exercise_idExercise")
                         , username
                         , rs.getString("value")
-                        , rs.getString("date"));
+                        , rs.getString("date")
+                        , rs.getString("nameExercise")
+                        );
                 results.add(result);
             }
 

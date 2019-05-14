@@ -6,14 +6,16 @@ public class Result {
     private String username;
     private String resultScore;
     private String date;
+    private String exerciseName;
 
 
-    public Result(int resultID, int exerciseID, String username, String resultScore, String date) {
+    public Result(int resultID, int exerciseID, String username, String resultScore, String date, String exerciseName) {
         this.resultID = resultID;
         this.exerciseID = exerciseID;
         this.username = username;
         this.resultScore = resultScore;
         this.date = date;
+        this.exerciseName = exerciseName;
     }
 
     public int getResultID() {
@@ -54,5 +56,13 @@ public class Result {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getExerciseName() {
+        return exerciseName;
+    }
+
+    public void setExerciseName(String exerciseName) {
+        this.exerciseName = exerciseName;
     }
 }
