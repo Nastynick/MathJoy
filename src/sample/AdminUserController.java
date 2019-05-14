@@ -24,6 +24,7 @@ public class AdminUserController implements Initializable {
 
     private Database database = new Database();
     private ObservableList<User> userData = null;
+    private ObservableList<Exercise> exerciseData = null;
 
     @FXML
     private TableView<User> userTableView;
@@ -61,6 +62,27 @@ public class AdminUserController implements Initializable {
     private Button onBackButtonPressed;
 
     @FXML
+    private Button exerciseAddButton;
+
+    @FXML
+    private ComboBox<Exercise> exerciseAddComboBox;
+
+    @FXML
+    void onExerciseAddButtonPressed(ActionEvent event) throws SQLException {
+        Exercise ex = exerciseAddComboBox.getValue();
+        User user = new User(userNameField.getText(), passwordField.getText(), "false");
+        boolean success = database.addUserToExercise(user, ex.getID());
+        if (success) {
+            feedbackLabel.setText("User added to exercise!");
+        } else {
+            feedbackLabel.setText("User does not exist or is already added!");
+        }
+
+
+
+    }
+
+    @FXML
     void onBackButtonPressed(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuAdminView.fxml"));
         Parent root = null;
@@ -75,6 +97,9 @@ public class AdminUserController implements Initializable {
 
     @FXML
     void onUserAddButtonPressed(ActionEvent event) throws SQLException {
+        if (emptyCheck()) {
+            return;
+        }
         lockAllButtons();
         User user = new User(userNameField.getText(), passwordField.getText(), "false");
         boolean success = database.insertUser(user);
@@ -93,12 +118,41 @@ public class AdminUserController implements Initializable {
     }
 
     @FXML
-    void onUserEditButtonPressed(ActionEvent event) {
+    void onUserEditButtonPressed(ActionEvent event) throws SQLException {
+        if (emptyCheck()) {
+            return;
+        }
+        boolean duplicate = false;
+        User user = new User(userNameField.getText(), passwordField.getText(), "false");
 
+        boolean success = database.editUser(user);
+
+        for (User user1 : userData) {
+            if (user1.getUsername().equals(userNameField.getText()) && user1.getPassword().equals(passwordField.getText())) {
+                duplicate = true;
+            }
+
+        }
+        if (duplicate) {
+            feedbackLabel.setText("Please change password before pressing edit");
+            return;
+        }
+        lockAllButtons();
+        if (success) {
+            feedbackLabel.setText("User has been updated!");
+            userData = FXCollections.observableArrayList(database.getAllUsers());
+            userTableView.setItems(userData);
+        } else {
+            feedbackLabel.setText("User does not exist!");
+        }
+        unlockAllButtons();
     }
 
     @FXML
     void onUserRemoveButtonPressed(ActionEvent event) throws SQLException {
+        if (emptyCheck()) {
+            return;
+        }
         lockAllButtons();
         User user = new User(userNameField.getText(), passwordField.getText(), "false");
         boolean success = database.removeUser(user);
@@ -117,6 +171,10 @@ public class AdminUserController implements Initializable {
         isTeacherBox.setDisable(true);
 
         Platform.runLater(()->{
+            exerciseData = FXCollections.observableArrayList(database.getAllExcercises());
+            exerciseAddComboBox.setItems(exerciseData);
+            exerciseAddComboBox.getSelectionModel().selectFirst();
+
             columnOne.setCellValueFactory(new PropertyValueFactory<>("username"));
             columnTwo.setCellValueFactory(new PropertyValueFactory<>("isTeacher"));
 
@@ -145,9 +203,6 @@ public class AdminUserController implements Initializable {
                 return row;
             });
 
-
-
-
         });
 
 
@@ -166,5 +221,16 @@ public class AdminUserController implements Initializable {
         editButton.setDisable(false);
         removeButton.setDisable(false);
         onBackButtonPressed.setDisable(false);
+        userNameField.setText("");
+        passwordField.setText("");
+        isTeacherBox.setSelected(false);
+    }
+
+    private boolean emptyCheck () {
+        if (userNameField.getText().equals("") || passwordField.getText().equals("")) {
+            feedbackLabel.setText("Username or password can not be empty!");
+            return true;
+        }
+        return false;
     }
 }
