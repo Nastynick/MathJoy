@@ -125,7 +125,7 @@ public class Database {
                         , username
                         , rs.getString("value")
                         , rs.getString("date")
-                        , rs.getString("nameEcxercise")
+                        , rs.getString("nameExcercise")
                         );
                 results.add(result);
             }
