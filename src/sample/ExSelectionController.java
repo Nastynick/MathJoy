@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.animation.ScaleTransition;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -17,6 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -83,7 +85,37 @@ public class ExSelectionController implements Initializable {
 
 
                 }
+
+
             });
+
+            row.setOnMouseEntered(event -> {
+
+                if (!row.isEmpty()) {
+                    ScaleTransition scaleTransition = new ScaleTransition();
+                    scaleTransition.setNode((Node)event.getSource());
+                    scaleTransition.setDuration(Duration.millis(100));
+                    scaleTransition.setToX(1.02);
+                    scaleTransition.setToY(1.05);
+                    scaleTransition.play();
+
+                }
+            });
+
+            row.setOnMouseExited(event -> {
+
+                if (!row.isEmpty()) {
+                    ScaleTransition scaleTransition = new ScaleTransition();
+                    scaleTransition.setNode((Node)event.getSource());
+                    scaleTransition.setDuration(Duration.millis(100));
+                    scaleTransition.setToX(1);
+                    scaleTransition.setToY(1);
+                    scaleTransition.play();
+
+                }
+            });
+
+
             return row ;
         });
 
