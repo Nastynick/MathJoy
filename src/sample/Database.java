@@ -304,8 +304,7 @@ public class Database {
             usernameDB = rs.getString("user_username");
         }
 
-
-        if (usernameDB == null) {
+        if (usernameDB == null || !usernameDB.equals(user.getUsername()) ) {
             return false;
         } else {
             query = "INSERT into user_has_exercise VALUES (?, ?);";
