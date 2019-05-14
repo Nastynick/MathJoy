@@ -33,7 +33,7 @@ public class ResultController implements Initializable {
         private TableColumn<Result, String> Date;
 
         @FXML
-        private TableColumn<Result, Integer> ExerciseId;
+        private TableColumn<Result, String> ExerciseId;
 
         @FXML
         void backButton(ActionEvent event) {
@@ -76,9 +76,9 @@ public class ResultController implements Initializable {
             }
         });
 
-        ExerciseId.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Result, Integer>, ObservableValue<Integer>>() {
-            public ObservableValue<Integer> call(TableColumn.CellDataFeatures<Result, Integer> p) {
-                return new ReadOnlyObjectWrapper(p.getValue().getExerciseID());
+        ExerciseId.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Result, String>, ObservableValue<String>>() {
+            public ObservableValue<String> call(TableColumn.CellDataFeatures<Result, String> p) {
+                return new ReadOnlyObjectWrapper(p.getValue().getExerciseName());
             }
         });
 
