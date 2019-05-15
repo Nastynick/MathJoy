@@ -1,7 +1,7 @@
 package sample;
 
 public class Model {
-    public float Calculate(long number1, long number2, String operator) {
+    public double Calculate(double number1, double number2, String operator) {
 
         switch (operator) {
 
