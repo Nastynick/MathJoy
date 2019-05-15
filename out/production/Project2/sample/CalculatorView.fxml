@@ -105,7 +105,7 @@
                   <Insets />
                </HBox.margin>
             </Button>
-            <Button fx:id="decimalPoint" mnemonicParsing="false" prefWidth="50.0" text=".">
+            <Button fx:id="decimalPoint" mnemonicParsing="false" onAction="#processNumbers" prefWidth="50.0" text=".">
                <font>
                   <Font name="Candara" size="16.0" />
                </font>

@@ -30,27 +30,32 @@ public class CalculatorController {
 
     @FXML
     public void procssOperators (ActionEvent event) {
-        String value = ((Button)event.getSource()).getText();
-        if (!value.equals("=")) {
-            if (!operator.isEmpty()) {
-                return;
-            }
-            operator = value;
-            number1 = Long.parseLong(screenLabel.getText());
-            screenLabel.setText("");
+        try {
+            String value = ((Button)event.getSource()).getText();
+            if (!value.equals("=")) {
+                if (!operator.isEmpty()) {
+                    return;
+                }
+                operator = value;
+                number1 = Double.parseDouble(screenLabel.getText());
+                screenLabel.setText("");
 
-        } else {
-            if (operator.isEmpty()) {
-                return;
-            }
-                number2 = Long.parseLong(screenLabel.getText());
+            } else {
+                if (operator.isEmpty()) {
+                    return;
+                }
+                number2 = Double.parseDouble(screenLabel.getText());
                 double output = model.Calculate(number1, number2, operator);
                 screenLabel.setText(String.valueOf(output));
                 operator = "";
                 start = true;
 
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+            screenLabel.setText("Error in the operation");
         }
-
     }
+
+}
 
