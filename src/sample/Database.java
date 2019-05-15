@@ -114,7 +114,7 @@ public class Database {
 
             String query = "        SELECT *\n" +
                     "        FROM results\n" +
-                    "        JOIN exercise ON results.exercise_idExercise = exercise.idExercise;";
+                    "        JOIN exercise ON results.exercise_idExercise = exercise.idExercise WHERE user_username = (?);";
             PreparedStatement pst = getCurrentConnection().prepareStatement(query);
             pst.setString(1, username);
             ResultSet rs = pst.executeQuery();
@@ -125,7 +125,7 @@ public class Database {
                         , username
                         , rs.getString("value")
                         , rs.getString("date")
-                        , rs.getString("nameExercise")
+                        , rs.getString("nameExcercise")
                         );
                 results.add(result);
             }
@@ -240,6 +240,85 @@ public class Database {
         }
         return false;
     }
+
+    boolean editUser (User user) {
+        try {
+            if (!checkUsername(user)) {
+                String query = "UPDATE user SET username = ?, password = ? WHERE username = ?;";
+                PreparedStatement pst = getCurrentConnection().prepareStatement(query);
+                pst.setString(1, user.getUsername());
+                pst.setString(2, user.getPassword());
+                pst.setString(3,user.getUsername());
+                pst.execute();
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    ArrayList<Exercise> getAllExcercises() {
+        ArrayList<Exercise> exercises = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            String query = "SELECT * from exercise";
+            PreparedStatement pst = getCurrentConnection().prepareStatement(query);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Exercise exercise = new Exercise(rs.getInt("idExercise"), rs.getString("nameExcercise"));
+                exercises.add(exercise);
+            }
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+
+        return exercises;
+
+    }
+
+    boolean addUserToExercise (User user, int exerciseId) throws SQLException {
+        if (!checkUsername(user)) {
+            return false;
+        }
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String usernameDB = null;
+        String query = "SELECT user_username FROM user_has_exercise WHERE exercise_idExercise = (?)";
+        PreparedStatement pst;
+        pst = getCurrentConnection().prepareStatement(query);
+        pst.setInt(1, exerciseId);
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            usernameDB = rs.getString("user_username");
+        }
+
+        if (usernameDB == null || !usernameDB.equals(user.getUsername()) ) {
+            return false;
+        } else {
+            query = "INSERT into user_has_exercise VALUES (?, ?);";
+            pst = getCurrentConnection().prepareStatement(query);
+            pst.setString(1,user.getUsername());
+            pst.setInt(2,exerciseId);
+            pst.execute();
+            return true;
+        }
+
+
+
+    }
+
 }
 
 

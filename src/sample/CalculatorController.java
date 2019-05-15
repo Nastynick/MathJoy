@@ -10,7 +10,8 @@ public class CalculatorController {
 
     @FXML
     private Label screenLabel;
-    private long number1 = 0;
+    private double number1 = 0;
+    private double number2 = 0;
     private String operator = "";
     private boolean start = true;
     private Model model = new Model();
@@ -42,8 +43,8 @@ public class CalculatorController {
             if (operator.isEmpty()) {
                 return;
             }
-                long number2 = Long.parseLong(screenLabel.getText());
-                float output = model.Calculate(number1, number2, operator);
+                number2 = Long.parseLong(screenLabel.getText());
+                double output = model.Calculate(number1, number2, operator);
                 screenLabel.setText(String.valueOf(output));
                 operator = "";
                 start = true;

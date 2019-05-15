@@ -15,7 +15,7 @@
             <Image url="@background.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="ResultTableView" layoutX="44.0" layoutY="41.0" prefHeight="308.0" prefWidth="266.0" style="-fx-background-color: transparent;" styleClass="table-row-cell" stylesheets="@ResultTableView.css">
+      <TableView fx:id="ResultTableView" layoutX="44.0" layoutY="41.0" prefHeight="308.0" prefWidth="266.0">
         <columns>
           <TableColumn fx:id="Results" prefWidth="59.0" text="Results" />
           <TableColumn fx:id="Date" prefWidth="71.0" text="Date" />
