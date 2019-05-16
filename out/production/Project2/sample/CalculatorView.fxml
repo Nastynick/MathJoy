@@ -146,7 +146,7 @@
             </Button>
          </children>
       </HBox>
-      <Label fx:id="memoryLabel" layoutX="-1.0" layoutY="6.0" prefHeight="32.0" prefWidth="356.0" text="Label" textFill="#070707">
+      <Label fx:id="memoryLabel" layoutX="-1.0" layoutY="6.0" prefHeight="32.0" prefWidth="356.0" text="Memory: " textFill="#070707">
          <font>
             <Font size="10.0" />
          </font>

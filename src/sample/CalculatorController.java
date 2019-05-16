@@ -12,6 +12,7 @@ public class CalculatorController {
     private Label screenLabel;
     @FXML
     private Label memoryLabel;
+
     private double number1 = 0;
     private double number2 = 0;
     private double number3 = 0;
@@ -64,7 +65,6 @@ public class CalculatorController {
     void processClearMemory (ActionEvent event) {
         number3 = 0;
         memoryLabel.setText("Memory: ");
-        screenLabel.setText("");
     }
 
     @FXML
