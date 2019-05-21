@@ -30,7 +30,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private Label errorLabel;
-    
+
 
     @FXML
     void loginButtonPressed(ActionEvent event) {
