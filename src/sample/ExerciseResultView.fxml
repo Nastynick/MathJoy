@@ -17,7 +17,7 @@
           <TableColumn fx:id="resultColumn" prefWidth="108.0" text="Result" />
         </columns>
       </TableView>
-      <ImageView fx:id="imageViiew" fitHeight="400.0" fitWidth="377.0" layoutX="220.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageView" fitHeight="400.0" fitWidth="377.0" layoutX="220.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@PositiveMath.png" />
          </image></ImageView>
