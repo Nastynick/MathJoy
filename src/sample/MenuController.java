@@ -17,7 +17,7 @@ public class MenuController implements Initializable {
 
     @FXML
     void CalculatorButton(ActionEvent event) {
-
+/*
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1View.fxml"));
             Parent root = null;
             try {
@@ -28,6 +28,7 @@ public class MenuController implements Initializable {
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
 
+ */
 
         }
 
@@ -56,15 +57,22 @@ public class MenuController implements Initializable {
 
     @FXML
     void calculatorButton(ActionEvent event) {
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CalculatorView.fxml"));
         Parent root = null;
         try {
             root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Calculator");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
+
     }
 
     @FXML
