@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class MenuController implements Initializable {
@@ -19,7 +20,7 @@ public class MenuController implements Initializable {
     private Button exerciseButton;
 
     @FXML
-    private Button placeholderButton;
+    private Button adminButton;
 
     @FXML
     private Button resultButton;
@@ -94,8 +95,8 @@ public class MenuController implements Initializable {
 
     @FXML
 
-    void placeholder1Button(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Placeholder1View.fxml"));
+    void onAdminButtonPressed(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuAdminView.fxml"));
         Parent root = null;
         try {
             root = loader.load();
@@ -105,8 +106,8 @@ public class MenuController implements Initializable {
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
 
-
     }
+
 
 
     @FXML
@@ -129,9 +130,19 @@ public class MenuController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        Database database = new Database();
+        try {
+            if (database.isTeacher(Database.getUsername())) {
+                adminButton.setVisible(true);
+            }
 
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         Effects.inflateDeflate(exerciseButton);
-        Effects.inflateDeflate(placeholderButton);
+        Effects.inflateDeflate(adminButton);
         Effects.inflateDeflate(calculatorButton);
         Effects.inflateDeflate(resultButton);
         Effects.inflateDeflate(exitButton);

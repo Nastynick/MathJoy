@@ -23,9 +23,6 @@ public class MenuAdminController implements Initializable {
     private Button adminExerciseButton;
 
     @FXML
-    private Button adminTaskButton;
-
-    @FXML
     private Button adminExitButton;
 
     @FXML
@@ -47,11 +44,15 @@ public class MenuAdminController implements Initializable {
 
     @FXML
     void adminExitClicked(ActionEvent event) {
-
-    }
-
-    @FXML
-    void adminTaskButtonClicked(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuView.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
 
     }
 
@@ -79,7 +80,6 @@ public class MenuAdminController implements Initializable {
 
         Effects.inflateDeflate(adminExerciseButton);
         Effects.inflateDeflate(adminExitButton);
-        Effects.inflateDeflate(adminTaskButton);
         Effects.inflateDeflate(adminUserButton);
         Effects.inflateDeflate(adminViewUserButton);
 

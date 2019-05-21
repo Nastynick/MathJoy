@@ -7,7 +7,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="LoginViewId" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
@@ -23,21 +22,5 @@
             <Image url="@mathjoylogo.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="412.0" layoutY="318.0" prefHeight="27.0" prefWidth="174.0" text="Username: Marijana">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="412.0" layoutY="345.0" prefHeight="27.0" prefWidth="174.0" text="Password: 12345" textAlignment="CENTER">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="468.0" layoutY="295.0" text="DEMO" textFill="RED">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <Button fx:id="adminShortcutButton" layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#adminShortcutButtonPressed" text="Admin Shortcut" />
    </children>
 </AnchorPane>

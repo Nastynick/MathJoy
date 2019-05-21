@@ -30,22 +30,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private Label errorLabel;
-
-    @FXML
-    private Button adminShortcutButton;
-
-    @FXML
-    void adminShortcutButtonPressed(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuAdminView.fxml"));
-        Parent root = null;
-        try {
-            root = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-    }
+    
 
     @FXML
     void loginButtonPressed(ActionEvent event) {

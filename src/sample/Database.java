@@ -560,6 +560,28 @@ public class Database {
         return false;
     }
 
+    boolean isTeacher (String username) throws SQLException {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        String isTeacher = null;
+        String query = "SELECT isTeacher FROM User WHERE username = (?)";
+        PreparedStatement pst = getCurrentConnection().prepareStatement(query);
+        pst.setString(1, username);
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            isTeacher = rs.getString("isTeacher");
+        }
+
+
+        return isTeacher != null && isTeacher.equals("True");
+    }
+
+
+
 }
 
 
