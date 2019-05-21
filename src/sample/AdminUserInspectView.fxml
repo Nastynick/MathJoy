@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminUserInspectController">
+   <children>
+      <TableView prefHeight="340.0" prefWidth="89.0">
+        <columns>
+          <TableColumn prefWidth="88.0" text="C1" />
+        </columns>
+      </TableView>
+      <TableView layoutX="89.0" prefHeight="400.0" prefWidth="511.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="Result ID" />
+            <TableColumn prefWidth="75.0" text="Exercise ID" />
+            <TableColumn prefWidth="99.0" text="Exercise Name" />
+            <TableColumn prefWidth="77.0" text="Result Score" />
+            <TableColumn prefWidth="77.0" text="Date" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

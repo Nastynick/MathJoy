@@ -304,7 +304,7 @@ public class Database {
     boolean addUserToExercise (User user, int exerciseId) throws SQLException {
 
         //adds a user to an exercise, returns true if success
-        if (!checkUsername(user)) {
+        if (checkUsername(user)) {
             return false;
         }
 
@@ -315,17 +315,17 @@ public class Database {
         }
 
         String usernameDB = null;
-        String query = "SELECT user_username FROM user_has_exercise WHERE exercise_idExercise = (?)";
+        String query = "SELECT user_username FROM user_has_exercise WHERE user_username = (?)";
         PreparedStatement pst;
         pst = getCurrentConnection().prepareStatement(query);
-        pst.setInt(1, exerciseId);
+        pst.setString(1, user.getUsername());
         ResultSet rs = pst.executeQuery();
 
         while (rs.next()) {
             usernameDB = rs.getString("user_username");
         }
 
-        if (usernameDB == null || !usernameDB.equals(user.getUsername()) ) {
+        if (usernameDB != null) {
             return false;
         } else {
             query = "INSERT into user_has_exercise VALUES (?, ?);";
