@@ -28,6 +28,8 @@ public class MenuAdminController implements Initializable {
     @FXML
     private Button adminViewUserButton;
 
+    
+
     @FXML
     void adminExerciseButtonClicked(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminExerciseTasksView.fxml"));
