@@ -340,6 +340,226 @@ public class Database {
 
     }
 
+    boolean addExercise (Exercise exercise) throws SQLException {
+        //inserts exercise in database, returns true if success.
+
+        //returns true if the username does not exist.
+
+        boolean exist = false;
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String taskName = null;
+        String query = "SELECT nameExcercise FROM exercise WHERE idExercise = (?)";
+        PreparedStatement pst;
+        pst = getCurrentConnection().prepareStatement(query);
+        pst.setInt(1, exercise.getID());
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            taskName = rs.getString("nameExcercise");
+        }
+
+        if (taskName != null) {
+            exist = true;
+        }
+
+
+        if (!exist) {
+
+            query = "insert into exercise (idExercise, nameExcercise)\n" +
+                    " values (?, ?);";
+            pst = getCurrentConnection().prepareStatement(query);
+            pst.setInt(1, getRandomNr());
+            pst.setString(2, exercise.getName());
+            pst.execute();
+            return true;
+
+        } else {
+            return false;
+        }
+
+    }
+
+    boolean insertTask (Task task, int exerciseID) throws SQLException {
+        //inserts exercise in database, returns true if success.
+
+        //returns true if the username does not exist.
+
+        boolean exist = false;
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String taskName = null;
+        String query = "SELECT question FROM tasks WHERE idTasks = (?)";
+        PreparedStatement pst;
+        pst = getCurrentConnection().prepareStatement(query);
+        pst.setInt(1, task.getQuestionID());
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            taskName = rs.getString("question");
+        }
+
+        if (taskName != null) {
+            exist = true;
+        }
+
+
+        if (!exist) {
+
+            query = "insert into tasks values (?, ?, ?, ?);";
+            pst = getCurrentConnection().prepareStatement(query);
+            pst.setInt(1, getRandomNr());
+            pst.setString(2, task.getQuestionText());
+            pst.setString(3, task.getAnswer());
+            pst.setInt(4,exerciseID);
+            pst.execute();
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
+    boolean deleteExercise (Exercise exercise) throws SQLException {
+
+        boolean exist = false;
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String taskName = null;
+        String query = "SELECT nameExcercise FROM exercise WHERE idExercise = (?)";
+        PreparedStatement pst;
+        pst = getCurrentConnection().prepareStatement(query);
+        pst.setInt(1, exercise.getID());
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            taskName = rs.getString("nameExcercise");
+        }
+
+        if (taskName != null) {
+            exist = true;
+        }
+
+
+        //removes user from database, returns true on success
+        try {
+            if (exist) {
+                query = "DELETE from exercise WHERE idExercise = (?)";
+                pst = getCurrentConnection().prepareStatement(query);
+                pst.setInt(1, exercise.getID());
+                pst.execute();
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    boolean deleteTask (Task task) throws SQLException {
+
+        boolean exist = false;
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String taskName = null;
+        String query = "SELECT question FROM tasks WHERE idTasks = (?)";
+        PreparedStatement pst;
+        pst = getCurrentConnection().prepareStatement(query);
+        pst.setInt(1, task.getQuestionID());
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            taskName = rs.getString("question");
+        }
+
+        if (taskName != null) {
+            exist = true;
+        }
+
+
+        //removes user from database, returns true on success
+        try {
+            if (exist) {
+                query = "DELETE from tasks WHERE idTasks = (?)";
+                pst = getCurrentConnection().prepareStatement(query);
+                pst.setInt(1, task.getQuestionID());
+                pst.execute();
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    boolean editTask (Task task) throws SQLException {
+
+        boolean exist = false;
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String taskName = null;
+        String query = "SELECT question FROM tasks WHERE idTasks = (?)";
+        PreparedStatement pst;
+        pst = getCurrentConnection().prepareStatement(query);
+        pst.setInt(1, task.getQuestionID());
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            taskName = rs.getString("question");
+        }
+
+        if (taskName != null) {
+            exist = true;
+        }
+
+
+        try {
+            if (exist) {
+                query = "UPDATE tasks SET question = ?, answer = ? WHERE idTasks = ?;";
+                pst = getCurrentConnection().prepareStatement(query);
+                pst.setString(1, task.getQuestionText());
+                pst.setString(2, task.getAnswer());
+                pst.setInt(3,task.getQuestionID());
+                pst.execute();
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }
 
 
