@@ -7,17 +7,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -26,6 +29,9 @@ import java.util.ResourceBundle;
 public class ExerciseResultController implements Initializable {
 
     ArrayList<Task> tasks = new ArrayList<>();
+
+    private String positiveUrl = "sample/PositiveMath.png";
+    private String negativeUrl = "sample/thinkingmathiew.png";
 
     @FXML
     private TableView<Task> taskResults;
@@ -37,7 +43,7 @@ public class ExerciseResultController implements Initializable {
     private TableColumn<Task, Boolean> resultColumn;
 
     @FXML
-    private ImageView imageViiew;
+    private ImageView imageView;
 
     @FXML
     private Text text;
@@ -110,13 +116,34 @@ public class ExerciseResultController implements Initializable {
             }
         }
 
-        text.setText("Great attempt!\nYou got:\n"+correctAmount+" / "+ tasks.size());
+        double a = correctAmount;
+        double b = tasks.size();
+
+        double result = (a/b)*100;
+
+        if (result >= 50) {
+            Image image = new Image(positiveUrl);
+            imageView.setImage(image);
+            text.setText("Great attempt!\nYou got:\n" + correctAmount + " / " + tasks.size());
+
+            String musicFile = "src/sample/vic.wav";
+
+            Media sound = new Media(new File(musicFile).toURI().toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(sound);
+            mediaPlayer.play();
+        } else {
+            Image image = new Image(negativeUrl);
+            imageView.setImage(image);
+            text.setText("Not so great... but not to worry! Just try again!\nYou got:\n" + correctAmount + " / " + tasks.size());
+
+            String musicFile = "src/sample/ohno.wav";
+
+            Media sound = new Media(new File(musicFile).toURI().toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(sound);
+            mediaPlayer.play();
+        }
 
         });
-
-
-
-
 
     }
 }
