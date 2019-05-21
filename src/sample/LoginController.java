@@ -70,7 +70,9 @@ public class LoginController implements Initializable {
                     e.printStackTrace();
                 }
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                stage.setScene(new Scene(root));
+                Scene scene = new Scene(root);
+                scene.getStylesheets().add("sample/Button.css");
+                stage.setScene(scene);
             }
         } catch (SQLException e) {
             e.printStackTrace();
