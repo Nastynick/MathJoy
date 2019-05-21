@@ -22,7 +22,7 @@
             <TableColumn fx:id="ExerciseId" prefWidth="135.0" text="Exersice name:" />
         </columns>
       </TableView>
-      <Button layoutX="424.0" layoutY="306.0" mnemonicParsing="false" onAction="#backButton" styleClass="toggle-button" stylesheets="@Button.css" text="Back to menu">
+      <Button fx:id="backButton" layoutX="424.0" layoutY="306.0" mnemonicParsing="false" onAction="#backButton" styleClass="Effect" stylesheets="@Button.css" text="Back to menu">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

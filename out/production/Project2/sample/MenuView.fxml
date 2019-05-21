@@ -7,6 +7,11 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@Button.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
    <children>
+      <ImageView fitHeight="226.0" fitWidth="278.0" layoutX="361.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@wavingMathiewNoDialog.gif" />
+         </image>
+      </ImageView>
       <Button fx:id="exerciseButton" layoutX="206.0" layoutY="171.0" mnemonicParsing="false" onAction="#exersicesButton" prefHeight="38.0" prefWidth="188.0" text="Exercise" />
       <Button fx:id="adminButton" layoutX="206.0" layoutY="309.0" mnemonicParsing="false" onAction="#onAdminButtonPressed" prefHeight="38.0" prefWidth="188.0" text="Administrator Functions" visible="false" />
       <Button fx:id="resultButton" layoutX="205.0" layoutY="219.0" mnemonicParsing="false" onAction="#resultsButton" prefHeight="38.0" prefWidth="188.0" text="Results" />

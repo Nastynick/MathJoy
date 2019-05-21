@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminExerciseTasksController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminExerciseTasksController">
    <children>
       <SplitPane dividerPositions="0.5" prefHeight="400.0" prefWidth="606.0">
         <items>
@@ -60,22 +59,22 @@
                      </font>
                   </Label>
                   <TextField fx:id="exerciseNameField" editable="false" layoutX="125.0" layoutY="14.0" prefHeight="25.0" prefWidth="155.0" />
-                  <Button fx:id="backButton" layoutX="6.0" layoutY="347.0" mnemonicParsing="false" onAction="#onBackButtonPressed" text="Back">
+                  <Button fx:id="backButton" layoutX="6.0" layoutY="347.0" mnemonicParsing="false" onAction="#onBackButtonPressed" stylesheets="@Button.css" text="Back">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="addButton" layoutX="150.0" layoutY="347.0" mnemonicParsing="false" onAction="#onAddButtonPressed" prefHeight="37.0" prefWidth="55.0" text="Add">
+                  <Button fx:id="addButton" layoutX="150.0" layoutY="347.0" mnemonicParsing="false" onAction="#onAddButtonPressed" prefHeight="37.0" prefWidth="55.0" stylesheets="@Button.css" text="Add">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="updateButton" layoutX="211.0" layoutY="347.0" mnemonicParsing="false" onAction="#onUpdateButtonPressed" text="Update">
+                  <Button fx:id="updateButton" layoutX="211.0" layoutY="347.0" mnemonicParsing="false" onAction="#onUpdateButtonPressed" stylesheets="@Button.css" text="Update">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="deleteButton" layoutX="69.0" layoutY="347.0" mnemonicParsing="false" onAction="#onDeleteButtonPressed" prefHeight="37.0" prefWidth="74.0" text="Delete">
+                  <Button fx:id="deleteButton" layoutX="69.0" layoutY="347.0" mnemonicParsing="false" onAction="#onDeleteButtonPressed" prefHeight="37.0" prefWidth="74.0" stylesheets="@Button.css" text="Delete">
                      <font>
                         <Font size="16.0" />
                      </font>

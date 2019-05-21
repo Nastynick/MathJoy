@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
@@ -34,6 +35,9 @@ public class ResultController implements Initializable {
 
         @FXML
         private TableColumn<Result, String> ExerciseId;
+
+        @FXML
+        Button backButton;
 
         @FXML
         void backButton(ActionEvent event) {
@@ -63,6 +67,8 @@ public class ResultController implements Initializable {
         results = database.getMathResults(Database.getUsername());
 
         ResultTableView.getItems().setAll(results);
+
+        Effects.inflateDeflate(backButton);
 
         Results.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Result, String>, ObservableValue<String>>() {
             public ObservableValue<String> call(TableColumn.CellDataFeatures<Result, String> p) {
