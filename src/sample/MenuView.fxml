@@ -7,11 +7,11 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
    <children>
-      <Button layoutX="205.0" layoutY="188.0" mnemonicParsing="false" onAction="#exersicesButton" prefHeight="25.0" prefWidth="188.0" text="Exercise" />
-      <Button layoutX="205.0" layoutY="235.0" mnemonicParsing="false" onAction="#placeholder1Button" prefHeight="25.0" prefWidth="188.0" text="placeholder" />
-      <Button layoutX="205.0" layoutY="272.0" mnemonicParsing="false" onAction="#resultsButton" prefHeight="25.0" prefWidth="188.0" text="Results" />
-      <Button layoutX="206.0" layoutY="361.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="188.0" text="EXIT" textAlignment="CENTER" />
-      <Button layoutX="205.0" layoutY="311.0" mnemonicParsing="false" onAction="#calculatorButton" prefHeight="25.0" prefWidth="188.0" text="Calculator" />
+      <Button fx:id="exerciseButton" layoutX="206.0" layoutY="171.0" mnemonicParsing="false" onAction="#exersicesButton" prefHeight="38.0" prefWidth="188.0" text="Exercise" />
+      <Button fx:id="placeholderButton" layoutX="205.0" layoutY="218.0" mnemonicParsing="false" onAction="#placeholder1Button" prefHeight="38.0" prefWidth="188.0" text="Placeholder" />
+      <Button fx:id="resultButton" layoutX="205.0" layoutY="265.0" mnemonicParsing="false" onAction="#resultsButton" prefHeight="38.0" prefWidth="188.0" text="Results" />
+      <Button fx:id="exitButton" layoutX="206.0" layoutY="361.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="188.0" text="EXIT" textAlignment="CENTER" />
+      <Button fx:id="calculatorButton" layoutX="205.0" layoutY="309.0" mnemonicParsing="false" onAction="#calculatorButton" prefHeight="38.0" prefWidth="188.0" text="Calculator" />
       <ImageView fitHeight="163.0" fitWidth="290.0" layoutX="155.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@mathjoylogo.png" />

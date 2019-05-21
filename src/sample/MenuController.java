@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,6 +15,22 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MenuController implements Initializable {
+    @FXML
+    private Button exerciseButton;
+
+    @FXML
+    private Button placeholderButton;
+
+    @FXML
+    private Button resultButton;
+
+    @FXML
+    private Button exitButton;
+
+    @FXML
+    private Button calculatorButton;
+
+
 
     @FXML
     void CalculatorButton(ActionEvent event) {
@@ -111,6 +128,23 @@ public class MenuController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
+        Effects.inflateDeflate(exerciseButton);
+        Effects.inflateDeflate(placeholderButton);
+        Effects.inflateDeflate(calculatorButton);
+        Effects.inflateDeflate(resultButton);
+        Effects.inflateDeflate(exitButton);
+
+        /*
+        exerciseButton.setStyle("-fx-background-color: #4286f4");
+        placeholderButton.setStyle("-fx-background-color: #ed4040");
+        calculatorButton.setStyle("-fx-background-color: #43ed3d");
+        resultButton.setStyle("-fx-background-color: #ed3fed");
+        exitButton.setStyle("-fx-background-color: #bab6b7");
+
+         */
+
 
     }
 }
