@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -200,6 +202,33 @@ public class AdminUserController implements Initializable {
                         }
                     }
                 });
+
+                row.setOnMouseEntered(event -> {
+
+                    if (!row.isEmpty()) {
+                        ScaleTransition scaleTransition = new ScaleTransition();
+                        scaleTransition.setNode((Node)event.getSource());
+                        scaleTransition.setDuration(Duration.millis(100));
+                        scaleTransition.setToX(1.02);
+                        scaleTransition.setToY(1.05);
+                        scaleTransition.play();
+
+                    }
+                });
+
+                row.setOnMouseExited(event -> {
+
+                    if (!row.isEmpty()) {
+                        ScaleTransition scaleTransition = new ScaleTransition();
+                        scaleTransition.setNode((Node)event.getSource());
+                        scaleTransition.setDuration(Duration.millis(100));
+                        scaleTransition.setToX(1);
+                        scaleTransition.setToY(1);
+                        scaleTransition.play();
+
+                    }
+                });
+
                 return row; //returns row
             });
 

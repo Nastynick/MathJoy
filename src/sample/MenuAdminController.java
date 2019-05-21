@@ -77,5 +77,11 @@ public class MenuAdminController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        Effects.inflateDeflate(adminExerciseButton);
+        Effects.inflateDeflate(adminExitButton);
+        Effects.inflateDeflate(adminTaskButton);
+        Effects.inflateDeflate(adminUserButton);
+        Effects.inflateDeflate(adminViewUserButton);
+
     }
 }
