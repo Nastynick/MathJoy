@@ -315,10 +315,11 @@ public class Database {
         }
 
         String usernameDB = null;
-        String query = "SELECT user_username FROM user_has_exercise WHERE user_username = (?)";
+        String query = "SELECT user_username FROM user_has_exercise WHERE user_username = (?) AND exercise_idExercise = (?)";
         PreparedStatement pst;
         pst = getCurrentConnection().prepareStatement(query);
         pst.setString(1, user.getUsername());
+        pst.setInt(2,exerciseId);
         ResultSet rs = pst.executeQuery();
 
         while (rs.next()) {
