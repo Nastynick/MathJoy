@@ -53,7 +53,7 @@ public class ExSelectionController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Database database = new Database();
 
-        ArrayList<Exercise> exercises = database.getExcercises("Marijana");
+        ArrayList<Exercise> exercises = database.getExcercises(Database.getUsername());
         tableView.getItems().addAll(exercises);
 
 

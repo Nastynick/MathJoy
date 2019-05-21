@@ -33,6 +33,15 @@ public class MenuAdminController implements Initializable {
 
     @FXML
     void adminExerciseButtonClicked(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminExerciseTasksView.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
 
     }
 

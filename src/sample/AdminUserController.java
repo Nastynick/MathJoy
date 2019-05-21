@@ -55,7 +55,7 @@ public class AdminUserController implements Initializable {
 
 
     @FXML
-    private Label feedbackLabel;
+    private Label feedbackLabel; //the label used to tell if success or failure
 
 
     @FXML
@@ -69,7 +69,7 @@ public class AdminUserController implements Initializable {
 
     @FXML
     void onExerciseAddButtonPressed(ActionEvent event) throws SQLException {
-        Exercise ex = exerciseAddComboBox.getValue();
+        Exercise ex = exerciseAddComboBox.getValue(); //gets the value from the box
         User user = new User(userNameField.getText(), passwordField.getText(), "false");
         boolean success = database.addUserToExercise(user, ex.getID());
         if (success) {
@@ -168,15 +168,15 @@ public class AdminUserController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        isTeacherBox.setDisable(true);
+        isTeacherBox.setDisable(true); //disables the box, only made to show if they are a teacher
 
-        Platform.runLater(()->{
-            exerciseData = FXCollections.observableArrayList(database.getAllExcercises());
-            exerciseAddComboBox.setItems(exerciseData);
-            exerciseAddComboBox.getSelectionModel().selectFirst();
+        Platform.runLater(()->{ // runs code after initialize is done, in order to use visual elements
+            exerciseData = FXCollections.observableArrayList(database.getAllExcercises()); //casts exercises to an observable array.
+            exerciseAddComboBox.setItems(exerciseData); //add the array to the combobox
+            exerciseAddComboBox.getSelectionModel().selectFirst(); //makes the first choice the default one
 
-            columnOne.setCellValueFactory(new PropertyValueFactory<>("username"));
-            columnTwo.setCellValueFactory(new PropertyValueFactory<>("isTeacher"));
+            columnOne.setCellValueFactory(new PropertyValueFactory<>("username")); //links the cell to the specific variable name
+            columnTwo.setCellValueFactory(new PropertyValueFactory<>("isTeacher")); // same
 
             try {
                 userData = FXCollections.observableArrayList(database.getAllUsers());
@@ -185,22 +185,22 @@ public class AdminUserController implements Initializable {
             }
             userTableView.setItems(userData);
 
-            userTableView.setRowFactory((TableView<User> tv) -> {
+            userTableView.setRowFactory((TableView<User> tv) -> { // click event.
                 TableRow<User> row = new TableRow<>();
                 row.setOnMouseClicked((MouseEvent event) -> {
                     if (event.getClickCount() == 1 && (!row.isEmpty())) {
                         User rowData = row.getItem();
-                        userNameField.setText(rowData.getUsername());
+                        userNameField.setText(rowData.getUsername()); //sets the data to the selected row
                         passwordField.setText(rowData.getPassword());
 
-                        if (rowData.getIsTeacher().equals("true")) {
+                        if (rowData.getIsTeacher().equals("true")) { //shows if they are a teacher or not
                             isTeacherBox.setSelected(true);
                         } else {
                             isTeacherBox.setSelected(false);
                         }
                     }
                 });
-                return row;
+                return row; //returns row
             });
 
         });
@@ -209,14 +209,14 @@ public class AdminUserController implements Initializable {
 
     }
 
-    private void lockAllButtons() {
+    private void lockAllButtons() { //ghosting protection
         addButton.setDisable(true);
         editButton.setDisable(true);
         removeButton.setDisable(true);
         onBackButtonPressed.setDisable(true);
     }
 
-    private void unlockAllButtons() {
+    private void unlockAllButtons() { //ghosting protection, resets fields.
         addButton.setDisable(false);
         editButton.setDisable(false);
         removeButton.setDisable(false);
@@ -226,7 +226,7 @@ public class AdminUserController implements Initializable {
         isTeacherBox.setSelected(false);
     }
 
-    private boolean emptyCheck () {
+    private boolean emptyCheck () { // checks if fields are empty, returns true if they are
         if (userNameField.getText().equals("") || passwordField.getText().equals("")) {
             feedbackLabel.setText("Username or password can not be empty!");
             return true;

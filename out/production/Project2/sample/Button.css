@@ -1,0 +1,47 @@
+.button {
+-fx-background-color:
+        linear-gradient(#f0ff35, #a9ff00),
+        radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: #395306;
+    }
+
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .button:hover span {
+      padding-right: 25px;
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+    </style>
+    </head>
+    <body>
+
+    <h2>Animated Button</h2>
+
+    <button class="button"><span>Hover </span></button>
+
+    </body>
+
+
+
+}
