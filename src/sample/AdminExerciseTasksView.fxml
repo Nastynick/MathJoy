@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminExerciseTasksController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f3faff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminExerciseTasksController">
    <children>
-      <SplitPane dividerPositions="0.5" prefHeight="400.0" prefWidth="606.0">
+      <SplitPane dividerPositions="0.5" prefHeight="400.0" prefWidth="606.0" style="-fx-background-color: #f3faff;">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="98.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="98.0" stylesheets="@Button.css">
                <children>
                   <TableView fx:id="exerciseTableView" prefHeight="343.0" prefWidth="144.0">
                     <columns>
@@ -33,7 +33,7 @@
                   <Button fx:id="exerciseAddButton" layoutX="241.0" layoutY="357.0" mnemonicParsing="false" onAction="#onExerciseAddButtonPressed" prefHeight="25.0" prefWidth="50.0" text="Add" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@Button.css">
                <children>
                   <TextField fx:id="exerciseIDField" editable="false" layoutX="125.0" layoutY="49.0" prefHeight="25.0" prefWidth="155.0" />
                   <Label layoutX="6.0" layoutY="49.0" prefHeight="25.0" prefWidth="87.0" text="Exercise ID:">
