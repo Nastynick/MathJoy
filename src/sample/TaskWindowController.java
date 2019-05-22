@@ -46,6 +46,9 @@ public class TaskWindowController implements Initializable {
     @FXML
     private Button nextButton;
 
+    @FXML
+    private Button backButtonTask;
+
 
     @FXML
     void backPressed(ActionEvent event) {
@@ -171,6 +174,8 @@ public class TaskWindowController implements Initializable {
         Platform.runLater(()-> {
             System.out.println(id);
             tasks = database.getTasks(id);
+            Effects.inflateDeflate(backButtonTask);
+
             populateTaskView();
             questionId.setStyle("-fx-font: 24 arial;");
             questionId.setText(tasks.get(i).getQuestionText());

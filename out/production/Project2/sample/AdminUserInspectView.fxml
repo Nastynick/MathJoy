@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 
+<?import javafx.scene.control.Label?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminUserInspectController">
    <children>
-      <TableView prefHeight="340.0" prefWidth="89.0">
+      <TableView fx:id="userTableView" prefHeight="340.0" prefWidth="104.0">
+         <placeholder>
+            <Label text="List loading, please wait..." />
+         </placeholder>
         <columns>
-          <TableColumn prefWidth="88.0" text="C1" />
+          <TableColumn fx:id="userColumn" prefWidth="103.0" text="User" />
         </columns>
       </TableView>
-      <TableView layoutX="89.0" prefHeight="400.0" prefWidth="511.0">
+      <TableView fx:id="resultTableView" layoutX="104.0" prefHeight="400.0" prefWidth="496.0">
+         <placeholder>
+            <Label text="Select a user first" />
+         </placeholder>
          <columns>
-            <TableColumn prefWidth="75.0" text="Result ID" />
-            <TableColumn prefWidth="75.0" text="Exercise ID" />
-            <TableColumn prefWidth="99.0" text="Exercise Name" />
-            <TableColumn prefWidth="77.0" text="Result Score" />
-            <TableColumn prefWidth="77.0" text="Date" />
+            <TableColumn fx:id="resultIdColumn" prefWidth="75.0" text="Result ID" />
+            <TableColumn fx:id="exerciseIDColumn" prefWidth="75.0" text="Exercise ID" />
+            <TableColumn fx:id="exerciseNameColumn" prefWidth="179.0" text="Exercise Name" />
+            <TableColumn fx:id="resultScoreColumn" prefWidth="100.0" text="Result Score" />
+            <TableColumn fx:id="dateColumn" prefWidth="66.0" text="Date" />
          </columns>
       </TableView>
+      <Button fx:id="backButton" layoutX="23.0" layoutY="348.0" mnemonicParsing="false" onAction="#onBackButtonpressed" text="Back">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

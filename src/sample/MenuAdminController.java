@@ -28,6 +28,8 @@ public class MenuAdminController implements Initializable {
     @FXML
     private Button adminViewUserButton;
 
+
+
     @FXML
     void adminExerciseButtonClicked(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminExerciseTasksView.fxml"));
@@ -72,7 +74,15 @@ public class MenuAdminController implements Initializable {
 
     @FXML
     void adminViewUserButtonClicked(ActionEvent event) {
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminUserInspectView.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
     }
 
     @Override

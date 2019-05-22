@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.29264214046822745" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminUserController">
+<SplitPane dividerPositions="0.29264214046822745" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminUserController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
@@ -59,22 +59,22 @@
             <Button fx:id="exerciseAddButton" layoutX="317.0" layoutY="146.0" mnemonicParsing="false" onAction="#onExerciseAddButtonPressed" text="Add" />
             <ButtonBar layoutX="9.0" layoutY="328.0" prefHeight="56.0" prefWidth="402.0">
                <buttons>
-                  <Button fx:id="onBackButtonPressed" mnemonicParsing="false" onAction="#onBackButtonPressed" prefHeight="43.0" prefWidth="89.0" text="Back">
+                  <Button fx:id="onBackButtonPressed" mnemonicParsing="false" onAction="#onBackButtonPressed" prefHeight="43.0" prefWidth="89.0" stylesheets="@Button.css" text="Back">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#onUserAddButtonPressed" prefHeight="43.0" prefWidth="89.0" text="Add">
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#onUserAddButtonPressed" prefHeight="43.0" prefWidth="89.0" stylesheets="@Button.css" text="Add">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="editButton" mnemonicParsing="false" onAction="#onUserEditButtonPressed" prefHeight="43.0" prefWidth="89.0" text="Edit">
+                  <Button fx:id="editButton" mnemonicParsing="false" onAction="#onUserEditButtonPressed" prefHeight="43.0" prefWidth="89.0" stylesheets="@Button.css" text="Edit">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="removeButton" mnemonicParsing="false" onAction="#onUserRemoveButtonPressed" prefHeight="43.0" prefWidth="89.0" text="Remove">
+                  <Button fx:id="removeButton" mnemonicParsing="false" onAction="#onUserRemoveButtonPressed" prefHeight="43.0" prefWidth="89.0" stylesheets="@Button.css" text="Remove">
                      <font>
                         <Font size="16.0" />
                      </font>
