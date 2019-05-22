@@ -21,7 +21,7 @@
          <image>
             <Image url="@PositiveMath.png" />
          </image></ImageView>
-      <Text fx:id="text" layoutX="220.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="124.515625">
+      <Text fx:id="text" layoutX="220.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="124.515625">
          <font>
             <Font size="16.0" />
          </font></Text>

@@ -12,8 +12,11 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TaskWindowController">
    <children>
+      <ImageView fitHeight="249.0" fitWidth="227.0" layoutX="373.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@waitingMathiew.png" />
+         </image></ImageView>
       <ListView fx:id="taskList" layoutX="7.0" layoutY="7.0" prefHeight="386.0" prefWidth="132.0" />
-      <ImageView fitHeight="174.0" fitWidth="132.0" layoutX="461.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="nextButton" defaultButton="true" layoutX="461.0" layoutY="230.0" mnemonicParsing="false" onAction="#nextPressed" prefHeight="163.0" prefWidth="132.0" text="Next" wrapText="true">
          <font>
             <Font size="28.0" />
