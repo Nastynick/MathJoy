@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="affd23bb-8592-4194-b275-73d5f4ecbccb" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/Project2/sample/waterwave.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/waterwave.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project2/sample/AdminExerciseTasksController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project2/sample/AdminExerciseTasksController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project2/sample/AdminExerciseTasksController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project2/sample/AdminExerciseTasksController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project2/sample/AdminUserInspectView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project2/sample/AdminUserInspectView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project2/sample/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project2/sample/Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project2/sample/MenuAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project2/sample/MenuAdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project2/sample/MenuAdminView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project2/sample/MenuAdminView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project2/sample/MenuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project2/sample/MenuView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project2/sample/TaskWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project2/sample/TaskWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project2/sample/TaskWindowView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project2/sample/TaskWindowView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/AdminExerciseTasksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/AdminExerciseTasksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/AdminExerciseTasksView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/AdminExerciseTasksView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/AdminUserInspectView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/AdminUserInspectView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/AdminUserView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/AdminUserView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CalculatorView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CalculatorView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/EndResultView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/EndResultView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ExSelectionView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ExSelectionView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ExerciseResultView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ExerciseResultView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/LoginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/LoginView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/MenuAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MenuAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/MenuAdminView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MenuAdminView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/MenuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MenuView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/TaskResultView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/TaskResultView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/TaskWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/TaskWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/TaskWindowView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/TaskWindowView.fxml" afterDir="false" />
     </list>
@@ -62,14 +38,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+            <state relative-caret-position="17">
+              <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
               <folding>
                 <element signature="e#862#863#0" expanded="true" />
-                <element signature="e#889#890#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/AdminExerciseTasksView.fxml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
@@ -137,8 +112,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/TaskWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="72" column="51" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
+            <state relative-caret-position="2208">
+              <caret line="225" selection-start-line="225" selection-end-line="225" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4284#4285#0" expanded="true" />
+                <element signature="e#4308#4309#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -205,9 +185,9 @@
         <option value="$PROJECT_DIR$/src/sample/MenuAdminController.java" />
         <option value="$PROJECT_DIR$/src/sample/MenuController.java" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
+        <option value="$PROJECT_DIR$/src/sample/Database.java" />
         <option value="$PROJECT_DIR$/src/sample/TaskWindowController.java" />
         <option value="$PROJECT_DIR$/src/sample/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/sample/Database.java" />
       </list>
     </option>
   </component>
@@ -221,10 +201,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="95" />
-    <option name="y" value="100" />
-    <option name="width" value="1331" />
-    <option name="height" value="773" />
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="775" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -466,10 +445,10 @@
     <option name="totallyTimeSpent" value="3000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="676" y="0" width="697" height="775" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2980333" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.6185243" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -479,7 +458,7 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31950846" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32398754" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -758,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/TaskWindowController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="72" column="51" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -775,17 +747,6 @@
             <element signature="e#510#511#0" expanded="true" />
             <element signature="e#565#566#0" expanded="true" />
             <element signature="e#609#610#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-          <folding>
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#889#890#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -805,6 +766,28 @@
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/TaskWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2208">
+          <caret line="225" selection-start-line="225" selection-end-line="225" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4284#4285#0" expanded="true" />
+            <element signature="e#4308#4309#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+          <folding>
+            <element signature="e#862#863#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

@@ -1,5 +1,6 @@
 package sample;
 
+import com.mysql.cj.jdbc.exceptions.MySQLTimeoutException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,6 +55,9 @@ public class LoginController implements Initializable {
 
         try {
             if (database.login(username.getText(), password.getText()) && loginAttempt) {
+                if (true) {
+                    throw new MySQLTimeoutException();
+                }
                 Database.setUsername(username.getText());
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuView.fxml"));
                 Parent root = null;
@@ -62,6 +66,7 @@ public class LoginController implements Initializable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);
                 scene.getStylesheets().add("sample/Button.css");
