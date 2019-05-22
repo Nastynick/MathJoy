@@ -55,9 +55,6 @@ public class LoginController implements Initializable {
 
         try {
             if (database.login(username.getText(), password.getText()) && loginAttempt) {
-                if (true) {
-                    throw new MySQLTimeoutException();
-                }
                 Database.setUsername(username.getText());
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuView.fxml"));
                 Parent root = null;
