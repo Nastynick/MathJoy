@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminUserInspectController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminUserInspectController">
    <children>
       <TableView fx:id="userTableView" prefHeight="340.0" prefWidth="104.0">
          <placeholder>
@@ -29,7 +29,7 @@
             <TableColumn fx:id="dateColumn" prefWidth="66.0" text="Date" />
          </columns>
       </TableView>
-      <Button fx:id="backButton" layoutX="23.0" layoutY="348.0" mnemonicParsing="false" onAction="#onBackButtonpressed" text="Back">
+      <Button fx:id="backButton" layoutX="23.0" layoutY="348.0" mnemonicParsing="false" onAction="#onBackButtonpressed" stylesheets="@Button.css" text="Back">
          <font>
             <Font size="17.0" />
          </font>

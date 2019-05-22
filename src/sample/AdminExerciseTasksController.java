@@ -187,6 +187,8 @@ public class AdminExerciseTasksController implements Initializable {
             addButton.setDisable(true);
             deleteButton.setDisable(false);
 
+
+
             modeSelector.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
                 @Override
                 public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
