@@ -28,7 +28,7 @@ public class MenuAdminController implements Initializable {
     @FXML
     private Button adminViewUserButton;
 
-    
+
 
     @FXML
     void adminExerciseButtonClicked(ActionEvent event) {

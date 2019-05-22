@@ -5,11 +5,16 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@Button.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f3faff;" stylesheets="@Button.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
    <children>
       <ImageView fitHeight="226.0" fitWidth="278.0" layoutX="361.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@wavingMathiewNoDialog.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="415.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@waterwave.png" />
          </image>
       </ImageView>
       <Button fx:id="exerciseButton" layoutX="206.0" layoutY="171.0" mnemonicParsing="false" onAction="#exersicesButton" prefHeight="38.0" prefWidth="188.0" text="Exercise" />

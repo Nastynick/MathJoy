@@ -31,6 +31,14 @@ public class LoginController implements Initializable {
     @FXML
     private Label errorLabel;
 
+    @FXML
+    private Button emergencyDemoButton;
+
+    @FXML
+    void onEmergencyDemoButtonPressed(ActionEvent event) {
+        database.setDatabasethings();
+    }
+
 
     @FXML
     void loginButtonPressed(ActionEvent event) {
@@ -58,11 +66,15 @@ public class LoginController implements Initializable {
                 Scene scene = new Scene(root);
                 scene.getStylesheets().add("sample/Button.css");
                 stage.setScene(scene);
+            } else {
+                errorLabel.setText("Invalid username/password!");
             }
-        } catch (SQLException e) {
+        } catch (Exception e) {
+            errorLabel.setText("ERROR - GEARHOST OFFLINE.");
+            emergencyDemoButton.setVisible(true);
             e.printStackTrace();
         }
-        errorLabel.setText("Invalid username/password!");
+
 
 
     }

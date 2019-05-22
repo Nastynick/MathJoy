@@ -1,7 +1,15 @@
 <component name="libraryTable">
   <library name="javax.mail">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/src/sample/javax.mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../gtranslateapi-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../jl1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../freetts-1.2/lib/cmu_time_awb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../freetts-1.2/lib/cmu_us_kal.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../freetts-1.2/lib/en_us.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../freetts-1.2/lib/freetts-jsapi10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../freetts-1.2/lib/freetts.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../freetts-1.2/lib/mbrola.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../freetts-1.2/mbrola/mbrola.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

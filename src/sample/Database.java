@@ -22,6 +22,12 @@ public class Database {
         Database.username = username;
     }
 
+    void setDatabasethings() {
+        url = "";
+        user = "";
+        pass = "";
+    }
+
     // Establish a new connection without needing to create new connections if it does already exist.
     private Connection getCurrentConnection() {
         if (connection != null) {
