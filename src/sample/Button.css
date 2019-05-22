@@ -1,11 +1,11 @@
 .button {
 -fx-background-color:
-        linear-gradient(#5dbcf9, #5dbcf9),
-        radial-gradient(center 50% -40%, radius 200%, #a6d0d8 45%, #8ab2cc 50%);
+        linear-gradient(#d5e0e8, #afdbf7),
+        radial-gradient(center 50% -40%, radius 200%, #d5e0e8 45%, #c3d5e2 50%);
     -fx-background-radius: 6, 5;
     -fx-background-insets: 0, 1;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
-    -fx-text-fill: #395306;
+    -fx-text-fill: #000000;
     }
 
     .button span {

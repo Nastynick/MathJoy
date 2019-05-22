@@ -8,7 +8,7 @@
 
 
 .table-view .column-header-background{
-    -fx-background-color: linear-gradient(#ffffff 0%, #ddeaff 100%);
+    -fx-background-color: linear-gradient(#ffffff 0%, #bccfdd 100%);
 }
 
 .table-view .column-header-background .label{
@@ -27,13 +27,13 @@
 .table-row-cell{
     -fx-background-color: -fx-table-cell-border-color, ##b5d3ff;
     -fx-background-insets: 0, 0 0 1 0;
-    -fx-padding: 0.0em; /* 0 /
+    -fx-padding: 0.0em;
 }
 
 .table-row-cell:odd{
-    -fx-background-color: -fx-table-cell-border-color, #ddeaff;
+    -fx-background-color: -fx-table-cell-border-color, #bccfdd;
     -fx-background-insets: 0, 0 0 1 0;
-    -fx-padding: 0.0em; / 0 */
+    -fx-padding: 0.0em;
 }
 
 .table-view{
@@ -41,7 +41,7 @@
 }
 
 .table-row-cell:selected {
-    -fx-background-color: #005797;
+    -fx-background-color: #798a96;
     -fx-background-insets: 0;
     -fx-background-radius: 1;
 }

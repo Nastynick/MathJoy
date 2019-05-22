@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminUserInspectController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminUserInspectController">
    <children>
-      <TableView fx:id="userTableView" prefHeight="340.0" prefWidth="104.0">
+      <TableView fx:id="userTableView" prefHeight="340.0" prefWidth="104.0" stylesheets="@TableView.css">
          <placeholder>
             <Label text="List loading, please wait..." />
          </placeholder>
@@ -17,7 +17,7 @@
           <TableColumn fx:id="userColumn" prefWidth="103.0" text="User" />
         </columns>
       </TableView>
-      <TableView fx:id="resultTableView" layoutX="104.0" prefHeight="400.0" prefWidth="496.0">
+      <TableView fx:id="resultTableView" layoutX="104.0" prefHeight="400.0" prefWidth="496.0" stylesheets="@TableView.css">
          <placeholder>
             <Label text="Select a user first" />
          </placeholder>
