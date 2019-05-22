@@ -13,7 +13,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TaskWindowController">
    <children>
       <ListView fx:id="taskList" layoutX="7.0" layoutY="7.0" prefHeight="386.0" prefWidth="132.0" />
-      <ImageView fitHeight="185.0" fitWidth="132.0" layoutX="461.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="174.0" fitWidth="132.0" layoutX="461.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="nextButton" defaultButton="true" layoutX="461.0" layoutY="230.0" mnemonicParsing="false" onAction="#nextPressed" prefHeight="163.0" prefWidth="132.0" text="Next" wrapText="true">
          <font>
             <Font size="28.0" />
@@ -26,18 +26,18 @@
          </font>
       </TextField>
       <TextArea fx:id="questionId" layoutX="145.0" layoutY="7.0" prefHeight="213.0" prefWidth="311.0" />
-      <Label layoutX="398.0" layoutY="6.0" text="Font Size" />
-      <Button fx:id="fontSizePlusButton" layoutX="428.0" layoutY="26.0" mnemonicParsing="false" onAction="#fontSizePlusButtonPressed" text="+">
+      <Label layoutX="400.0" layoutY="340.0" text="Font Size" />
+      <Button fx:id="fontSizePlusButton" layoutX="430.0" layoutY="363.0" mnemonicParsing="false" onAction="#fontSizePlusButtonPressed" text="+">
          <font>
             <Font size="9.0" />
          </font>
       </Button>
-      <Button fx:id="fontSizeMinusButton" layoutX="398.0" layoutY="26.0" mnemonicParsing="false" onAction="#fontSizeMinusButtonPressed" prefHeight="19.0" prefWidth="19.0" text="-">
+      <Button fx:id="fontSizeMinusButton" layoutX="405.0" layoutY="363.0" mnemonicParsing="false" onAction="#fontSizeMinusButtonPressed" prefHeight="19.0" prefWidth="19.0" text="-">
          <font>
             <Font size="9.0" />
          </font>
       </Button>
-      <Button fx:id="textToSpeechButton" layoutX="152.0" layoutY="185.0" mnemonicParsing="false" onAction="#onTextToSpeechButtonPressed" prefHeight="25.0" prefWidth="19.0">
+      <Button fx:id="textToSpeechButton" layoutX="153.0" layoutY="357.0" mnemonicParsing="false" onAction="#onTextToSpeechButtonPressed" prefHeight="25.0" prefWidth="19.0">
          <graphic>
             <ImageView fitHeight="22.0" fitWidth="21.0">
                <image>

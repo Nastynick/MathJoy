@@ -38,6 +38,8 @@ public class LoginController implements Initializable {
     @FXML
     void onEmergencyDemoButtonPressed(ActionEvent event) {
         database.setDatabasethings();
+        errorLabel.setText("DEMO: Set to local database");
+        emergencyDemoButton.setDisable(true);
     }
 
 
