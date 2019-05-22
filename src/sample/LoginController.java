@@ -1,5 +1,6 @@
 package sample;
 
+import com.mysql.cj.jdbc.exceptions.MySQLTimeoutException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +32,16 @@ public class LoginController implements Initializable {
     @FXML
     private Label errorLabel;
 
+    @FXML
+    private Button emergencyDemoButton;
+
+    @FXML
+    void onEmergencyDemoButtonPressed(ActionEvent event) {
+        database.setDatabasethings();
+        errorLabel.setText("DEMO: Set to local database");
+        emergencyDemoButton.setDisable(true);
+    }
+
 
     @FXML
     void loginButtonPressed(ActionEvent event) {
@@ -54,15 +65,20 @@ public class LoginController implements Initializable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);
                 scene.getStylesheets().add("sample/Button.css");
                 stage.setScene(scene);
+            } else {
+                errorLabel.setText("Invalid username/password!");
             }
-        } catch (SQLException e) {
+        } catch (Exception e) {
+            errorLabel.setText("ERROR - GEARHOST OFFLINE.");
+            emergencyDemoButton.setVisible(true);
             e.printStackTrace();
         }
-        errorLabel.setText("Invalid username/password!");
+
 
 
     }

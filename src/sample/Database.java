@@ -22,6 +22,13 @@ public class Database {
         Database.username = username;
     }
 
+    void setDatabasethings() {
+        url = "jdbc:mysql://localhost/mathjoy?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        user = "root";
+        pass = "root";
+        connection = null;
+    }
+
     // Establish a new connection without needing to create new connections if it does already exist.
     private Connection getCurrentConnection() {
         if (connection != null) {

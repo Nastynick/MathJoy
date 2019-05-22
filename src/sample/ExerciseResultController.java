@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class ExerciseResultController implements Initializable {
@@ -121,10 +122,16 @@ public class ExerciseResultController implements Initializable {
 
         double result = (a/b)*100;
 
+        String[] positive = {"Good Job!", "Well Done!", "You did it!", "Great Job!"};
+        String[] negative = {"You can still do better!", "Try again!", "Better luck next time.", "I have faith in you."};
+
+        Random random = new Random();
+
         if (result >= 50) {
             Image image = new Image(positiveUrl);
             imageView.setImage(image);
-            text.setText("Great attempt!\nYou got:\n" + correctAmount + " / " + tasks.size());
+            int rand = random.nextInt(positive.length);
+            text.setText(positive[rand] + "\nYou got:\n" + correctAmount + " / " + tasks.size());
 
             String musicFile = "src/sample/vic.wav";
 
@@ -134,7 +141,8 @@ public class ExerciseResultController implements Initializable {
         } else {
             Image image = new Image(negativeUrl);
             imageView.setImage(image);
-            text.setText("Not so great... but not to worry! Just try again!\nYou got:\n" + correctAmount + " / " + tasks.size());
+            int rand = random.nextInt(negative.length);
+            text.setText(negative[rand] + "\nYou got:\n" + correctAmount + " / " + tasks.size());
 
             String musicFile = "src/sample/ohno.wav";
 

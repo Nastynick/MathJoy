@@ -1,5 +1,7 @@
 package sample;
 
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +13,7 @@ public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception{
+
         //Parent root = FXMLLoader.load(getClass().getResource("MenuView.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
         primaryStage.setTitle("MathJoy");
